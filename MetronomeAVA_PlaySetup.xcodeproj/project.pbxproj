@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		49E0CC2E2CD7A10E006643ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49E0CC0F2CD7A10B006643ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49E0CC162CD7A10B006643ED;
+			remoteInfo = MetronomeAVA_PlaySetup;
+		};
+		49E0CC382CD7A10E006643ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49E0CC0F2CD7A10B006643ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49E0CC162CD7A10B006643ED;
+			remoteInfo = MetronomeAVA_PlaySetup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49E0CC172CD7A10B006643ED /* MetronomeAVA_PlaySetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetronomeAVA_PlaySetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E0CC2D2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeAVA_PlaySetupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E0CC372CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeAVA_PlaySetupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		49E0CC3F2CD7A10E006643ED /* Exceptions for "MetronomeAVA_PlaySetup" folder in "MetronomeAVA_PlaySetup" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				49E0CC3F2CD7A10E006643ED /* Exceptions for "MetronomeAVA_PlaySetup" folder in "MetronomeAVA_PlaySetup" target */,
+			);
+			path = MetronomeAVA_PlaySetup;
+			sourceTree = "<group>";
+		};
+		49E0CC302CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MetronomeAVA_PlaySetupTests;
+			sourceTree = "<group>";
+		};
+		49E0CC3A2CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MetronomeAVA_PlaySetupUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49E0CC142CD7A10B006643ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC2A2CD7A10E006643ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC342CD7A10E006643ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49E0CC0E2CD7A10B006643ED = {
+			isa = PBXGroup;
+			children = (
+				49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */,
+				49E0CC302CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */,
+				49E0CC3A2CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */,
+				49E0CC182CD7A10B006643ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49E0CC182CD7A10B006643ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49E0CC172CD7A10B006643ED /* MetronomeAVA_PlaySetup.app */,
+				49E0CC2D2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests.xctest */,
+				49E0CC372CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E0CC402CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetup" */;
+			buildPhases = (
+				49E0CC132CD7A10B006643ED /* Sources */,
+				49E0CC142CD7A10B006643ED /* Frameworks */,
+				49E0CC152CD7A10B006643ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */,
+			);
+			name = MetronomeAVA_PlaySetup;
+			packageProductDependencies = (
+			);
+			productName = MetronomeAVA_PlaySetup;
+			productReference = 49E0CC172CD7A10B006643ED /* MetronomeAVA_PlaySetup.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49E0CC2C2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E0CC452CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetupTests" */;
+			buildPhases = (
+				49E0CC292CD7A10E006643ED /* Sources */,
+				49E0CC2A2CD7A10E006643ED /* Frameworks */,
+				49E0CC2B2CD7A10E006643ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49E0CC2F2CD7A10E006643ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				49E0CC302CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */,
+			);
+			name = MetronomeAVA_PlaySetupTests;
+			packageProductDependencies = (
+			);
+			productName = MetronomeAVA_PlaySetupTests;
+			productReference = 49E0CC2D2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49E0CC362CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E0CC482CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetupUITests" */;
+			buildPhases = (
+				49E0CC332CD7A10E006643ED /* Sources */,
+				49E0CC342CD7A10E006643ED /* Frameworks */,
+				49E0CC352CD7A10E006643ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49E0CC392CD7A10E006643ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				49E0CC3A2CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */,
+			);
+			name = MetronomeAVA_PlaySetupUITests;
+			packageProductDependencies = (
+			);
+			productName = MetronomeAVA_PlaySetupUITests;
+			productReference = 49E0CC372CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49E0CC0F2CD7A10B006643ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					49E0CC162CD7A10B006643ED = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					49E0CC2C2CD7A10E006643ED = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 49E0CC162CD7A10B006643ED;
+					};
+					49E0CC362CD7A10E006643ED = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 49E0CC162CD7A10B006643ED;
+					};
+				};
+			};
+			buildConfigurationList = 49E0CC122CD7A10B006643ED /* Build configuration list for PBXProject "MetronomeAVA_PlaySetup" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49E0CC0E2CD7A10B006643ED;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 49E0CC182CD7A10B006643ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */,
+				49E0CC2C2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */,
+				49E0CC362CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49E0CC152CD7A10B006643ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC2B2CD7A10E006643ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC352CD7A10E006643ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49E0CC132CD7A10B006643ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC292CD7A10E006643ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E0CC332CD7A10E006643ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49E0CC2F2CD7A10E006643ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */;
+			targetProxy = 49E0CC2E2CD7A10E006643ED /* PBXContainerItemProxy */;
+		};
+		49E0CC392CD7A10E006643ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */;
+			targetProxy = 49E0CC382CD7A10E006643ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49E0CC412CD7A10E006643ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetronomeAVA_PlaySetup/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49E0CC422CD7A10E006643ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetronomeAVA_PlaySetup/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49E0CC432CD7A10E006643ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49E0CC442CD7A10E006643ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49E0CC462CD7A10E006643ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetupTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetronomeAVA_PlaySetup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetronomeAVA_PlaySetup";
+			};
+			name = Debug;
+		};
+		49E0CC472CD7A10E006643ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetupTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetronomeAVA_PlaySetup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetronomeAVA_PlaySetup";
+			};
+			name = Release;
+		};
+		49E0CC492CD7A10E006643ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetupUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetronomeAVA_PlaySetup;
+			};
+			name = Debug;
+		};
+		49E0CC4A2CD7A10E006643ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 496L6DA76V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AW.MetronomeAVA-PlaySetupUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetronomeAVA_PlaySetup;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49E0CC122CD7A10B006643ED /* Build configuration list for PBXProject "MetronomeAVA_PlaySetup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E0CC432CD7A10E006643ED /* Debug */,
+				49E0CC442CD7A10E006643ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49E0CC402CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E0CC412CD7A10E006643ED /* Debug */,
+				49E0CC422CD7A10E006643ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49E0CC452CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E0CC462CD7A10E006643ED /* Debug */,
+				49E0CC472CD7A10E006643ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49E0CC482CD7A10E006643ED /* Build configuration list for PBXNativeTarget "MetronomeAVA_PlaySetupUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E0CC492CD7A10E006643ED /* Debug */,
+				49E0CC4A2CD7A10E006643ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49E0CC0F2CD7A10B006643ED /* Project object */;
+}

@@ -10,7 +10,10 @@ import UIKit
 class ViewController: UIViewController, PickerDelegate {
     
     var metronome = Metronome()
-
+    let pickerView = UIPickerView()
+    var slider = UISlider()
+    var pickerData: [String] = []
+    
     //   MARK: - Create stack view
     let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -53,11 +56,7 @@ class ViewController: UIViewController, PickerDelegate {
     }
     //    MARK: Elements
     
-    let pickerView = UIPickerView()
-    var slider = UISlider()
-    
-    var pickerData: [String] = []
-    
+   
     var timeSignButton: UIButton = {
         let timeSignButton = UIButton()
     timeSignButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
@@ -303,7 +302,6 @@ extension ViewController: UIPickerViewDataSource {
 }
 
 extension ViewController: UIPickerViewDelegate {
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
@@ -312,7 +310,6 @@ extension ViewController: UIPickerViewDelegate {
         metronome.bpm = Float(row + 20)
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
         var label = UILabel()
             if let view = view as? UILabel { label = view }
         label.font = .systemFont(ofSize: 60, weight: .bold)

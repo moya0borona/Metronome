@@ -61,6 +61,7 @@ class Metronome {
         click = DispatchTime.now()
         startClick()
         }
+    
     func stop() {
         player.stop()
         Metronome.totalBeat = 0

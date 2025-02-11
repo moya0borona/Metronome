@@ -8,7 +8,7 @@
 import AVFoundation
 
 class Player {
-    
+   
     private var audioEngine: AVAudioEngine!
     private var playerNode: AVAudioPlayerNode!
     private var bufferClickHigh: AVAudioPCMBuffer!
@@ -35,15 +35,15 @@ class Player {
 
     private func prepareAudio() {
         guard let clickHighUrl = Bundle.main.url(forResource: "clickHigh", withExtension: "wav"),
-        let clickLowhUrl = Bundle.main.url(forResource: "clickLow", withExtension: "wav") else {
-            print("Audio files not found")
+        let clickLowUrl = Bundle.main.url(forResource: "clickLow", withExtension: "wav") else {
+            print("Audio files not found in bundle")
             return }
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             let audioFileClickHigh = try AVAudioFile(forReading: clickHighUrl)
-            let audioFileClickLow = try AVAudioFile(forReading: clickLowhUrl)
+            let audioFileClickLow = try AVAudioFile(forReading: clickLowUrl)
             
             bufferClickHigh = createPCMBuffer(from: audioFileClickHigh)
             bufferClickLow = createPCMBuffer(from: audioFileClickLow)
@@ -65,6 +65,7 @@ class Player {
            return buffer
        }
     func play() {
+        
         guard let buffer = Metronome.totalBeat == 0 ? bufferClickHigh : bufferClickLow else { return }
         playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts, completionHandler: nil)
         playerNode.play()

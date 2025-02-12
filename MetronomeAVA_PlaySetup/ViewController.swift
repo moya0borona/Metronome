@@ -13,6 +13,7 @@ class ViewController: UIViewController, PickerDelegate {
     let pickerView = UIPickerView()
     var slider = UISlider()
     var pickerData: [String] = []
+    var lastTapTime: TimeInterval?
     
     //   MARK: - Create stack view
     let stackView: UIStackView = {
@@ -44,19 +45,17 @@ class ViewController: UIViewController, PickerDelegate {
         stackView.addArrangedSubview(beatImageArray[6])
         stackView.addArrangedSubview(beatImageArray[7])
     }
-    let imageBackground = UIImage(systemName: "stop.fill")
-    let image2 = UIImage(systemName: "stop")
+    let fillBitImage = UIImage(systemName: "stop.fill")
+    let bitImage = UIImage(systemName: "stop")
     
     func createImageView() -> UIImageView {
-        let imageView = UIImageView(image: image2)
+        let imageView = UIImageView(image: bitImage)
         imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         imageView.tintColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
         return imageView
     }
     //    MARK: Elements
-    
-   
     var timeSignButton: UIButton = {
         let timeSignButton = UIButton()
     timeSignButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
@@ -88,7 +87,7 @@ class ViewController: UIViewController, PickerDelegate {
         tapTempoButton.translatesAutoresizingMaskIntoConstraints = false
         return tapTempoButton
     }()
-    var imageView: UIImageView = {
+    var mainImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "background")
         imageView.contentMode = .scaleToFill
@@ -107,8 +106,7 @@ class ViewController: UIViewController, PickerDelegate {
         pickerView.backgroundColor = .lightGray
         pickerView.alpha = 0.9
         pickerView.layer.cornerRadius = 80
-        
-//        setupPicker()
+
         pickerView.delegate = self
         pickerView.dataSource = self
         
@@ -118,15 +116,14 @@ class ViewController: UIViewController, PickerDelegate {
        
         pickerView.selectRow(Int(slider.value - 20), inComponent: 0, animated: true)
         
-        startButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
-        timeSignButton.addTarget(self, action: #selector(timeSignButtonTap), for: .touchUpInside)
-        tapTempoButton.addTarget(self, action: #selector(tapTempoButtonTap), for: .touchDown)
-        
-        slider.addTarget(self, action: #selector(changedBpm), for: .allEvents)
+        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+        timeSignButton.addTarget(self, action: #selector(timeSignButtonAction), for: .touchUpInside)
+        tapTempoButton.addTarget(self, action: #selector(tapTempoButtonAction), for: .touchDown)
+        slider.addTarget(self, action: #selector(sliderChangedBpm), for: .allEvents)
         
         self.updateBeatImage(Metronome.topNum)
         
-        metronome.clickForAnimate = { (interval) in
+        metronome.dataForAnimate = { (interval) in
             self.cancelBeatImageAnimation()
             self.animateBeatImage()
         }
@@ -134,13 +131,12 @@ class ViewController: UIViewController, PickerDelegate {
    
     //    MARK: - Setup background image
     func setupImageView() {
-        view.addSubview(imageView)
-        
+        view.addSubview(mainImageView)
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mainImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mainImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     //    MARK: - Slider colors and value
@@ -153,15 +149,14 @@ class ViewController: UIViewController, PickerDelegate {
         slider.value = metronome.bpm
     }
     //    MARK: - Action change slider value
-    @objc func changedBpm() {
-        //        Проверить верность использования
+    @objc func sliderChangedBpm() {
         metronome.bpm = slider.value
         DispatchQueue.main.async {
             self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)
         }
     }
     //    MARK: - Action button
-    @objc func buttonTap() {
+    @objc func startButtonAction() {
 //        DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.cancelBeatImageAnimation()
 //        }
@@ -175,7 +170,7 @@ class ViewController: UIViewController, PickerDelegate {
             startButton.setTitle("STOP", for: .normal)
             }
     }
-    @objc func timeSignButtonTap() {
+    @objc func timeSignButtonAction() {
         let pickerViewController = PickerViewController()
         pickerViewController.delegate = self
         if let sheet = pickerViewController.sheetPresentationController {
@@ -187,15 +182,12 @@ class ViewController: UIViewController, PickerDelegate {
     }
 
     
-    var lastTapTime: TimeInterval?
-    @objc func tapTempoButtonTap() {
+
+    @objc func tapTempoButtonAction() {
         let currentTime = Date().timeIntervalSince1970
-        // Если есть предыдущее нажатие, вычисляем интервал
         if let lastTap = lastTapTime {
             let interval = currentTime - lastTap
             print("Время между нажатиями: \(interval) секунд")
-            
-            // Если прошло больше 2 секунд — сбрасываем массив
             if interval > 2 {
                 metronome.saveTapTime.removeAll()
                 print("Tap times reset")
@@ -203,16 +195,12 @@ class ViewController: UIViewController, PickerDelegate {
         } else {
             print("Первое нажатие")
         }
-        
-        // Обновляем lastTapTime и добавляем текущее время в массив
         lastTapTime = currentTime
         metronome.saveTapTime.append(currentTime)
 
-        // Достаточно ли данных для вычисления BPM?
         guard metronome.saveTapTime.count >= 2 else { return }
-        
-        // Вычисляем BPM
-        metronome.calculateTapSum()
+
+        metronome.calculateTap()
 
             self.slider.value  = self.metronome.bpm
             self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  
@@ -223,7 +211,6 @@ class ViewController: UIViewController, PickerDelegate {
         timeSignButton.setTitle("\(Metronome.topNum)/4", for: .normal)
     }
     
-//   Добавить?  0...topNum
     func updateBeatImage(_ topNum: Int) {
         for i in 0...7 {
             beatImageArray[i].isHidden = i < topNum ? false : true
@@ -232,20 +219,18 @@ class ViewController: UIViewController, PickerDelegate {
     
     func animateBeatImage() {
             for i in 0..<Metronome.topNum {
-                beatImageArray[i].image = image2
-                beatImageArray[Metronome.totalBeat].image = imageBackground
+                beatImageArray[i].image = bitImage
+                beatImageArray[Metronome.totalBeat].image = fillBitImage
             }
-        
         Metronome.totalBeat += 1
         if Metronome.totalBeat >= Metronome.topNum {
             Metronome.totalBeat = 0
         }
     }
     //    MARK: - Cancel animation
-//Delete
     func cancelBeatImageAnimation() {
         for i in 0...7 {
-            beatImageArray[i].image = image2
+            beatImageArray[i].image = bitImage
         }
     }
     

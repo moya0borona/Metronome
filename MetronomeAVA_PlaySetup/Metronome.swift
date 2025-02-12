@@ -12,9 +12,7 @@ class Metronome {
     
     let player = Player()
     var click: DispatchTime = DispatchTime.distantFuture
-    
     var saveTapTime: [TimeInterval] = []
-    
     let maxBpm: Float = 200
     let minBpm: Float = 20
     var bpm: Float = 120 {
@@ -29,28 +27,22 @@ class Metronome {
     }
     static var totalBeat = 0
     static var topNum = 4
-    var countTap = 0
     var isRunning: Bool = false {
         didSet {
             isRunning ? start() : stop()
         }
     }
     
-    var clickForAnimate: ((_ interval: DispatchTime) -> Void)?
+    var dataForAnimate: ((_ interval: DispatchTime) -> Void)?
 // MARK: - Tap tempo
     
-    func calculateTapSum() {
+    func calculateTap() {
         guard saveTapTime.count > 1 else { return }
-        
-        // Вычисляем интервалы между нажатиями
         let intervals = zip(saveTapTime.dropLast(), saveTapTime.dropFirst()).map { $1 - $0 }
         print("Tap times: \(saveTapTime)")
-        
-        // Средний интервал и BPM
+
         let averageInterval = intervals.reduce(0, +) / Double(intervals.count)
         bpm = Float((60.0 / averageInterval).rounded())
-
-        // Ограничиваем длину массива, удаляя старые значения
         if saveTapTime.count > 5 {
             saveTapTime.removeFirst(saveTapTime.count - 5)
         }
@@ -60,7 +52,7 @@ class Metronome {
 // MARK: - Start / Stop
     func start() {
         click = DispatchTime.now()
-        startClick()
+        playClick()
         }
     
     func stop() {
@@ -68,7 +60,7 @@ class Metronome {
         Metronome.totalBeat = 0
     }
     
-    func startClick() {
+    func playClick() {
         guard isRunning,
                 click <= DispatchTime.now()
         else { return }
@@ -77,10 +69,10 @@ class Metronome {
         print(click)
         
         DispatchQueue.main.asyncAfter(deadline: click) { [weak self] in
-            self?.startClick()
+            self?.playClick()
         }
         player.play()
-        clickForAnimate?(click)
+        dataForAnimate?(click)
     }
 }
 

@@ -17,18 +17,16 @@ class PickerViewController: UIViewController {
     var delegate: PickerDelegate?
   
     let pickerView = UIPickerView()
-    var arrayNum = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    var pickerViewValue = ["1", "2", "3", "4", "5", "6", "7", "8"]
 //    MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(#colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1))
-        
-       
+
         pickerView.delegate = self
         pickerView.dataSource = self
   
         setupPickerView()
-   
     }
     override func viewWillAppear(_ animated: Bool) {
         pickerView.selectRow(Int(Metronome.topNum - 1), inComponent: 0, animated: true)
@@ -51,7 +49,7 @@ class PickerViewController: UIViewController {
 }
 extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayNum.count
+        return pickerViewValue.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -70,13 +68,13 @@ extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         print(row)
         
-        return arrayNum[row]
+        return pickerViewValue[row]
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
             if let view = view as? UILabel { label = view }
         label.font = .systemFont(ofSize: 60, weight: .bold)
-        label.text =  arrayNum[row]
+        label.text =  pickerViewValue[row]
         label.textColor = UIColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
 //        label.alpha = 0.9
         label.textAlignment = .center

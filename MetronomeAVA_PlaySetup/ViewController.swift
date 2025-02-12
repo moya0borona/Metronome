@@ -186,25 +186,33 @@ class ViewController: UIViewController, PickerDelegate {
         present(pickerViewController, animated: true)
     }
 
-    var countTap = 0
-    var lastTapTempoDate = Date.now
+    
+    var lastTapTime: TimeInterval?
     @objc func tapTempoButtonTap() {
         let currentTime = Date().timeIntervalSince1970
-        let now = Date.now
-        let tapInterval = now.timeIntervalSince(lastTapTempoDate)
-        print(tapInterval)
-        
-        if tapInterval < 2.0 && tapInterval >= 0.2 {
-        //            let newBeatsPerMinute = 60.0 / tapInterval
-        //            bpm = Float(newBeatsPerMinute.rounded())
-            metronome.pressTimes.append(currentTime)
-                }
-        
-        lastTapTempoDate = now
-        
-            if metronome.pressTimes.count == 4 {
-                metronome.calculateTapSum()
+        // Если есть предыдущее нажатие, вычисляем интервал
+        if let lastTap = lastTapTime {
+            let interval = currentTime - lastTap
+            print("Время между нажатиями: \(interval) секунд")
+            
+            // Если прошло больше 2 секунд — сбрасываем массив
+            if interval > 2 {
+                metronome.saveTapTime.removeAll()
+                print("Tap times reset")
+            }
+        } else {
+            print("Первое нажатие")
         }
+        
+        // Обновляем lastTapTime и добавляем текущее время в массив
+        lastTapTime = currentTime
+        metronome.saveTapTime.append(currentTime)
+
+        // Достаточно ли данных для вычисления BPM?
+        guard metronome.saveTapTime.count >= 2 else { return }
+        
+        // Вычисляем BPM
+        metronome.calculateTapSum()
 
             self.slider.value  = self.metronome.bpm
             self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  

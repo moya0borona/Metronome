@@ -13,7 +13,7 @@ class Metronome {
     let player = Player()
     var click: DispatchTime = DispatchTime.distantFuture
     
-    var pressTimes: [TimeInterval] = []
+    var saveTapTime: [TimeInterval] = []
     
     let maxBpm: Float = 200
     let minBpm: Float = 20
@@ -40,19 +40,20 @@ class Metronome {
 // MARK: - Tap tempo
     
     func calculateTapSum() {
+        guard saveTapTime.count > 1 else { return }
+        
+        // Вычисляем интервалы между нажатиями
+        let intervals = zip(saveTapTime.dropLast(), saveTapTime.dropFirst()).map { $1 - $0 }
+        print("Tap times: \(saveTapTime)")
+        
+        // Средний интервал и BPM
+        let averageInterval = intervals.reduce(0, +) / Double(intervals.count)
+        bpm = Float((60.0 / averageInterval).rounded())
 
-        guard pressTimes.count == 4 else { return }
-        
-        let interval1 = pressTimes[1] - pressTimes[0]
-        let interval2 = pressTimes[2] - pressTimes[1]
-        let interval3 = pressTimes[3] - pressTimes[2]
-        
-        let totalSum = interval1 + interval2 + interval3
-        let newBpm = 180 / totalSum
-        
-        bpm = Float(newBpm.rounded())
-        
-        pressTimes.removeAll()
+        // Ограничиваем длину массива, удаляя старые значения
+        if saveTapTime.count > 5 {
+            saveTapTime.removeFirst(saveTapTime.count - 5)
+        }
     }
 
     

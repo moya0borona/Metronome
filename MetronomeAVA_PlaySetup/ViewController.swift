@@ -15,7 +15,6 @@ class ViewController: UIViewController, PickerDelegate {
     var pickerData: [String] = []
     var lastTapTime: TimeInterval?
     
-    //   MARK: - Create stack view
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -24,7 +23,7 @@ class ViewController: UIViewController, PickerDelegate {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-//    Create struct later
+    
     lazy var beatImageArray: [UIImageView] = [
         createImageView(),
         createImageView(),
@@ -55,14 +54,14 @@ class ViewController: UIViewController, PickerDelegate {
         imageView.tintColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
         return imageView
     }
-    //    MARK: Elements
+    
     var timeSignButton: UIButton = {
         let timeSignButton = UIButton()
-    timeSignButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
-    timeSignButton.tintColor = .systemGray
-    timeSignButton.setTitle("4/4", for: .normal)
-    timeSignButton.layer.cornerRadius = 10
-    timeSignButton.isHighlighted = true
+        timeSignButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
+        timeSignButton.tintColor = .systemGray
+        timeSignButton.setTitle("4/4", for: .normal)
+        timeSignButton.layer.cornerRadius = 10
+        timeSignButton.isHighlighted = true
         timeSignButton.translatesAutoresizingMaskIntoConstraints = false
         return timeSignButton
     }()
@@ -94,26 +93,25 @@ class ViewController: UIViewController, PickerDelegate {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-
-    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         UIApplication.shared.isIdleTimerDisabled = true
         setupImageView()
         setConstraints()
-
+        
         pickerView.backgroundColor = .lightGray
         pickerView.alpha = 0.9
         pickerView.layer.cornerRadius = 80
-
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         
         setSliderDefault()
-
+        
         addArrageSubviews()
-       
+        
         pickerView.selectRow(Int(slider.value - 20), inComponent: 0, animated: true)
         
         startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
@@ -128,8 +126,7 @@ class ViewController: UIViewController, PickerDelegate {
             self.animateBeatImage()
         }
     }
-   
-    //    MARK: - Setup background image
+    
     func setupImageView() {
         view.addSubview(mainImageView)
         NSLayoutConstraint.activate([
@@ -139,7 +136,7 @@ class ViewController: UIViewController, PickerDelegate {
             mainImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    //    MARK: - Slider colors and value
+    
     func setSliderDefault() {
         slider.tintColor = UIColor(#colorLiteral(red: 0.3821307421, green: 0.3722137213, blue: 0.3333640099, alpha: 1))
         slider.thumbTintColor = UIColor(#colorLiteral(red: 0.3801537156, green: 0.2612983584, blue: 0, alpha: 1))
@@ -148,18 +145,16 @@ class ViewController: UIViewController, PickerDelegate {
         slider.maximumValue = metronome.maxBpm
         slider.value = metronome.bpm
     }
-    //    MARK: - Action change slider value
+    
     @objc func sliderChangedBpm() {
         metronome.bpm = slider.value
         DispatchQueue.main.async {
             self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)
         }
     }
-    //    MARK: - Action button
+    
     @objc func startButtonAction() {
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.cancelBeatImageAnimation()
-//        }
+        self.cancelBeatImageAnimation()
         if metronome.isRunning == true {
             metronome.isRunning = false
             startButton.backgroundColor = .systemGreen
@@ -168,7 +163,7 @@ class ViewController: UIViewController, PickerDelegate {
             metronome.isRunning = true
             startButton.backgroundColor = .systemRed
             startButton.setTitle("STOP", for: .normal)
-            }
+        }
     }
     @objc func timeSignButtonAction() {
         let pickerViewController = PickerViewController()
@@ -177,35 +172,35 @@ class ViewController: UIViewController, PickerDelegate {
             sheet.detents = [ .medium(), .large()]
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 80
-            }
+        }
         present(pickerViewController, animated: true)
     }
-
     
-
+    
+    
     @objc func tapTempoButtonAction() {
         let currentTime = Date().timeIntervalSince1970
         if let lastTap = lastTapTime {
             let interval = currentTime - lastTap
-            print("Время между нажатиями: \(interval) секунд")
+
             if interval > 2 {
                 metronome.saveTapTime.removeAll()
                 print("Tap times reset")
             }
         } else {
-            print("Первое нажатие")
+            print("First tap")
         }
         lastTapTime = currentTime
         metronome.saveTapTime.append(currentTime)
-
+        
         guard metronome.saveTapTime.count >= 2 else { return }
-
+        
         metronome.calculateTap()
-
-            self.slider.value  = self.metronome.bpm
-            self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  
+        
+        self.slider.value  = self.metronome.bpm
+        self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  
     }
-
+    
     func updateImage() {
         updateBeatImage(Metronome.topNum)
         timeSignButton.setTitle("\(Metronome.topNum)/4", for: .normal)
@@ -218,10 +213,10 @@ class ViewController: UIViewController, PickerDelegate {
     }
     
     func animateBeatImage() {
-            for i in 0..<Metronome.topNum {
-                beatImageArray[i].image = bitImage
-                beatImageArray[Metronome.totalBeat].image = fillBitImage
-            }
+        for i in 0..<Metronome.topNum {
+            beatImageArray[i].image = bitImage
+            beatImageArray[Metronome.totalBeat].image = fillBitImage
+        }
         Metronome.totalBeat += 1
         if Metronome.totalBeat >= Metronome.topNum {
             Metronome.totalBeat = 0
@@ -234,7 +229,6 @@ class ViewController: UIViewController, PickerDelegate {
         }
     }
     
-//    MARK: - SetConstraints
     func setConstraints() {
         view.addSubview(stackView)
         view.addSubview(pickerView)
@@ -277,7 +271,6 @@ class ViewController: UIViewController, PickerDelegate {
     }
 }
 
-//    MARK: - Extensions
 extension ViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -290,8 +283,8 @@ extension ViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let pickerViewHeight: CGFloat = 150
         let numberOfVisibleRows: CGFloat = 2
-            return pickerViewHeight / numberOfVisibleRows
-        }
+        return pickerViewHeight / numberOfVisibleRows
+    }
 }
 
 extension ViewController: UIPickerViewDelegate {
@@ -304,13 +297,13 @@ extension ViewController: UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
-            if let view = view as? UILabel { label = view }
+        if let view = view as? UILabel { label = view }
         label.font = .systemFont(ofSize: 60, weight: .bold)
         label.text =  pickerData[row]
         label.textColor = UIColor(#colorLiteral(red: 0.1340290308, green: 0.1086466387, blue: 4.684161468e-05, alpha: 1))
         label.alpha = 0.9
         label.textAlignment = .center
-            return label
+        return label
     }
 }
 

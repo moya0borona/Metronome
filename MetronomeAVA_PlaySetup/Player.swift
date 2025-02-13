@@ -8,7 +8,7 @@
 import AVFoundation
 
 class Player {
-   
+    
     private var audioEngine: AVAudioEngine!
     private var playerNode: AVAudioPlayerNode!
     private var bufferClickHigh: AVAudioPCMBuffer!
@@ -17,12 +17,12 @@ class Player {
         setupAudioEngine()
         prepareAudio()
     }
-
+    
     private func setupAudioEngine() {
         audioEngine = AVAudioEngine()
         playerNode = AVAudioPlayerNode()
         audioEngine.attach(playerNode)
-
+        
         let mixer = audioEngine.mainMixerNode
         audioEngine.connect(playerNode, to: mixer, format: nil)
         
@@ -32,10 +32,10 @@ class Player {
             print("Error AudioEngine: \(error)")
         }
     }
-
+    
     private func prepareAudio() {
         guard let clickHighUrl = Bundle.main.url(forResource: "clickHigh", withExtension: "wav"),
-        let clickLowUrl = Bundle.main.url(forResource: "clickLow", withExtension: "wav") else {
+              let clickLowUrl = Bundle.main.url(forResource: "clickLow", withExtension: "wav") else {
             print("Audio files not found in bundle")
             return }
         do {
@@ -52,18 +52,18 @@ class Player {
         }
     }
     private func createPCMBuffer(from file: AVAudioFile) -> AVAudioPCMBuffer? {
-           guard let format = file.processingFormat as AVAudioFormat? else { return nil }
-           guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: UInt32(file.length)) else { return nil }
-
-           do {
-               try file.read(into: buffer)
-           } catch {
-               print("Error reading audio file into buffer: \(error)")
-               return nil
-           }
-
-           return buffer
-       }
+        guard let format = file.processingFormat as AVAudioFormat? else { return nil }
+        guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: UInt32(file.length)) else { return nil }
+        
+        do {
+            try file.read(into: buffer)
+        } catch {
+            print("Error reading audio file into buffer: \(error)")
+            return nil
+        }
+        
+        return buffer
+    }
     func play() {
         
         guard let buffer = Metronome.totalBeat == 0 ? bufferClickHigh : bufferClickLow else { return }
@@ -72,6 +72,6 @@ class Player {
     }
     
     func stop() {
-            playerNode.stop()
+        playerNode.stop()
     }
 }

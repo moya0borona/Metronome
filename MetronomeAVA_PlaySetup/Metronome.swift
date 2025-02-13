@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import AVFoundation
 
 class Metronome {
     
@@ -32,15 +31,21 @@ class Metronome {
             isRunning ? start() : stop()
         }
     }
-    
     var dataForAnimate: ((_ interval: DispatchTime) -> Void)?
-// MARK: - Tap tempo
+        
+    func start() {
+        click = DispatchTime.now()
+        playClick()
+    }
+    
+    func stop() {
+        player.stop()
+        Metronome.totalBeat = 0
+    }
     
     func calculateTap() {
         guard saveTapTime.count > 1 else { return }
         let intervals = zip(saveTapTime.dropLast(), saveTapTime.dropFirst()).map { $1 - $0 }
-        print("Tap times: \(saveTapTime)")
-
         let averageInterval = intervals.reduce(0, +) / Double(intervals.count)
         bpm = Float((60.0 / averageInterval).rounded())
         if saveTapTime.count > 5 {
@@ -48,21 +53,9 @@ class Metronome {
         }
     }
 
-    
-// MARK: - Start / Stop
-    func start() {
-        click = DispatchTime.now()
-        playClick()
-        }
-    
-    func stop() {
-        player.stop()
-        Metronome.totalBeat = 0
-    }
-    
     func playClick() {
         guard isRunning,
-                click <= DispatchTime.now()
+              click <= DispatchTime.now()
         else { return }
         let interval: TimeInterval = 60.0 / Double(bpm)
         click = click + interval

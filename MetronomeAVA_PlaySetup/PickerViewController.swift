@@ -12,7 +12,7 @@ protocol PickerDelegate: AnyObject {
 }
 class PickerViewController: UIViewController {
     
-    var delegate: PickerDelegate?
+    weak var delegate: PickerDelegate?
     
     let pickerView = UIPickerView()
     var pickerViewValue = ["1", "2", "3", "4", "5", "6", "7", "8"]

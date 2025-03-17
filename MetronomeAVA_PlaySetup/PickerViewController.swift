@@ -19,7 +19,7 @@ final class PickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1))
+        view.backgroundColor = UIColor.ElementColor.customDarkGrey2
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -76,7 +76,7 @@ extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         let label = UILabel()
         label.font = .systemFont(ofSize: 60, weight: .bold)
         label.text =  pickerViewValue[row]
-        label.textColor = UIColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }

@@ -51,13 +51,13 @@ class ViewController: UIViewController, PickerDelegate {
         let imageView = UIImageView(image: bitImage)
         imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        imageView.tintColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
+        imageView.tintColor = UIColor.ElementColor.customGrey
         return imageView
     }
     
     var timeSignButton: UIButton = {
         let timeSignButton = UIButton()
-        timeSignButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
+        timeSignButton.backgroundColor = UIColor.ElementColor.customGrey
         timeSignButton.tintColor = .systemGray
         timeSignButton.setTitle("4/4", for: .normal)
         timeSignButton.layer.cornerRadius = 10
@@ -79,7 +79,7 @@ class ViewController: UIViewController, PickerDelegate {
     
     var tapTempoButton: UIButton = {
         let tapTempoButton = UIButton()
-        tapTempoButton.backgroundColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
+        tapTempoButton.backgroundColor = UIColor.ElementColor.customGrey
         tapTempoButton.tintColor = .systemGray
         tapTempoButton.setTitle("TAP", for: .normal)
         tapTempoButton.layer.cornerRadius = 10
@@ -140,9 +140,9 @@ class ViewController: UIViewController, PickerDelegate {
     }
     
     func setSliderDefault() {
-        slider.tintColor = UIColor(#colorLiteral(red: 0.3821307421, green: 0.3722137213, blue: 0.3333640099, alpha: 1))
-        slider.thumbTintColor = UIColor(#colorLiteral(red: 0.3801537156, green: 0.2612983584, blue: 0, alpha: 1))
-        slider.maximumTrackTintColor = UIColor(#colorLiteral(red: 0.6155465245, green: 0.596773684, blue: 0.5478830338, alpha: 1))
+        slider.tintColor = UIColor.ElementColor.customDarkGrey
+        slider.thumbTintColor = UIColor.ElementColor.customBrown
+        slider.maximumTrackTintColor = UIColor.ElementColor.customGrey
         slider.minimumValue = metronome.minBpm
         slider.maximumValue = metronome.maxBpm
         slider.value = metronome.bpm
@@ -299,7 +299,7 @@ extension ViewController: UIPickerViewDelegate {
         let label = UILabel()
         label.font = .systemFont(ofSize: 60, weight: .bold)
         label.text =  pickerData[row]
-        label.textColor = UIColor(#colorLiteral(red: 0.1340290308, green: 0.1086466387, blue: 4.684161468e-05, alpha: 1))
+        label.textColor = UIColor.ElementColor.customDarkBrown
         label.alpha = 0.9
         label.textAlignment = .center
         return label

@@ -6,6 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		490B522D2D886C5D002DB97A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B521E2D886C5D002DB97A /* Player.swift */; };
+		490B522E2D886C5D002DB97A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B521F2D886C5D002DB97A /* SceneDelegate.swift */; };
+		490B522F2D886C5D002DB97A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B52202D886C5D002DB97A /* ViewController.swift */; };
+		490B52302D886C5D002DB97A /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B521C2D886C5D002DB97A /* Metronome.swift */; };
+		490B52312D886C5D002DB97A /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B521D2D886C5D002DB97A /* PickerViewController.swift */; };
+		490B52322D886C5D002DB97A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B52152D886C5D002DB97A /* AppDelegate.swift */; };
+		490B52332D886C5D002DB97A /* clickLow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 490B52182D886C5D002DB97A /* clickLow.wav */; };
+		490B52342D886C5D002DB97A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490B521B2D886C5D002DB97A /* LaunchScreen.storyboard */; };
+		490B52352D886C5D002DB97A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490B52162D886C5D002DB97A /* Assets.xcassets */; };
+		490B52362D886C5D002DB97A /* clickHigh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 490B52172D886C5D002DB97A /* clickHigh.wav */; };
+		490B52392D886D3A002DB97A /* ElementsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B52382D886D3A002DB97A /* ElementsColor.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		49E0CC2E2CD7A10E006643ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,30 +38,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490B52152D886C5D002DB97A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		490B52162D886C5D002DB97A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		490B52172D886C5D002DB97A /* clickHigh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clickHigh.wav; sourceTree = "<group>"; };
+		490B52182D886C5D002DB97A /* clickLow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clickLow.wav; sourceTree = "<group>"; };
+		490B52192D886C5D002DB97A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		490B521A2D886C5D002DB97A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		490B521C2D886C5D002DB97A /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		490B521D2D886C5D002DB97A /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		490B521E2D886C5D002DB97A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		490B521F2D886C5D002DB97A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		490B52202D886C5D002DB97A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		490B52382D886D3A002DB97A /* ElementsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsColor.swift; sourceTree = "<group>"; };
 		49E0CC172CD7A10B006643ED /* MetronomeAVA_PlaySetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetronomeAVA_PlaySetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E0CC2D2CD7A10E006643ED /* MetronomeAVA_PlaySetupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeAVA_PlaySetupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E0CC372CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeAVA_PlaySetupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		49E0CC3F2CD7A10E006643ED /* Exceptions for "MetronomeAVA_PlaySetup" folder in "MetronomeAVA_PlaySetup" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 49E0CC162CD7A10B006643ED /* MetronomeAVA_PlaySetup */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				49E0CC3F2CD7A10E006643ED /* Exceptions for "MetronomeAVA_PlaySetup" folder in "MetronomeAVA_PlaySetup" target */,
-			);
-			path = MetronomeAVA_PlaySetup;
-			sourceTree = "<group>";
-		};
 		49E0CC302CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MetronomeAVA_PlaySetupTests;
@@ -85,10 +93,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490B52212D886C5D002DB97A /* MetronomeAVA_PlaySetup */ = {
+			isa = PBXGroup;
+			children = (
+				490B52152D886C5D002DB97A /* AppDelegate.swift */,
+				490B52162D886C5D002DB97A /* Assets.xcassets */,
+				490B52172D886C5D002DB97A /* clickHigh.wav */,
+				490B52372D886C7F002DB97A /* Colors */,
+				490B52182D886C5D002DB97A /* clickLow.wav */,
+				490B52192D886C5D002DB97A /* Info.plist */,
+				490B521B2D886C5D002DB97A /* LaunchScreen.storyboard */,
+				490B521C2D886C5D002DB97A /* Metronome.swift */,
+				490B521D2D886C5D002DB97A /* PickerViewController.swift */,
+				490B521E2D886C5D002DB97A /* Player.swift */,
+				490B521F2D886C5D002DB97A /* SceneDelegate.swift */,
+				490B52202D886C5D002DB97A /* ViewController.swift */,
+			);
+			path = MetronomeAVA_PlaySetup;
+			sourceTree = "<group>";
+		};
+		490B52372D886C7F002DB97A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				490B52382D886D3A002DB97A /* ElementsColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		49E0CC0E2CD7A10B006643ED = {
 			isa = PBXGroup;
 			children = (
-				49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */,
+				490B52212D886C5D002DB97A /* MetronomeAVA_PlaySetup */,
 				49E0CC302CD7A10E006643ED /* MetronomeAVA_PlaySetupTests */,
 				49E0CC3A2CD7A10E006643ED /* MetronomeAVA_PlaySetupUITests */,
 				49E0CC182CD7A10B006643ED /* Products */,
@@ -119,9 +154,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				49E0CC192CD7A10B006643ED /* MetronomeAVA_PlaySetup */,
 			);
 			name = MetronomeAVA_PlaySetup;
 			packageProductDependencies = (
@@ -225,6 +257,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490B52332D886C5D002DB97A /* clickLow.wav in Resources */,
+				490B52342D886C5D002DB97A /* LaunchScreen.storyboard in Resources */,
+				490B52352D886C5D002DB97A /* Assets.xcassets in Resources */,
+				490B52362D886C5D002DB97A /* clickHigh.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490B52392D886D3A002DB97A /* ElementsColor.swift in Sources */,
+				490B522D2D886C5D002DB97A /* Player.swift in Sources */,
+				490B522E2D886C5D002DB97A /* SceneDelegate.swift in Sources */,
+				490B522F2D886C5D002DB97A /* ViewController.swift in Sources */,
+				490B52302D886C5D002DB97A /* Metronome.swift in Sources */,
+				490B52312D886C5D002DB97A /* PickerViewController.swift in Sources */,
+				490B52322D886C5D002DB97A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +323,17 @@
 			targetProxy = 49E0CC382CD7A10E006643ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		490B521B2D886C5D002DB97A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				490B521A2D886C5D002DB97A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		49E0CC412CD7A10E006643ED /* Debug */ = {

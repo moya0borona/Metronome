@@ -96,17 +96,14 @@
 		490B52212D886C5D002DB97A /* MetronomeAVA_PlaySetup */ = {
 			isa = PBXGroup;
 			children = (
-				490B52152D886C5D002DB97A /* AppDelegate.swift */,
-				490B52162D886C5D002DB97A /* Assets.xcassets */,
-				490B52172D886C5D002DB97A /* clickHigh.wav */,
+				490B523A2D8878DD002DB97A /* Resources */,
 				490B52372D886C7F002DB97A /* Colors */,
+				490B52172D886C5D002DB97A /* clickHigh.wav */,
 				490B52182D886C5D002DB97A /* clickLow.wav */,
 				490B52192D886C5D002DB97A /* Info.plist */,
-				490B521B2D886C5D002DB97A /* LaunchScreen.storyboard */,
 				490B521C2D886C5D002DB97A /* Metronome.swift */,
 				490B521D2D886C5D002DB97A /* PickerViewController.swift */,
 				490B521E2D886C5D002DB97A /* Player.swift */,
-				490B521F2D886C5D002DB97A /* SceneDelegate.swift */,
 				490B52202D886C5D002DB97A /* ViewController.swift */,
 			);
 			path = MetronomeAVA_PlaySetup;
@@ -118,6 +115,17 @@
 				490B52382D886D3A002DB97A /* ElementsColor.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		490B523A2D8878DD002DB97A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				490B52152D886C5D002DB97A /* AppDelegate.swift */,
+				490B521F2D886C5D002DB97A /* SceneDelegate.swift */,
+				490B52162D886C5D002DB97A /* Assets.xcassets */,
+				490B521B2D886C5D002DB97A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		49E0CC0E2CD7A10B006643ED = {

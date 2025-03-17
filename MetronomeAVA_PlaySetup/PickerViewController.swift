@@ -67,8 +67,6 @@ extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print(row)
-        
         return pickerViewValue[row]
     }
     

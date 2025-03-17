@@ -61,7 +61,6 @@ class ViewController: UIViewController, PickerDelegate {
         timeSignButton.tintColor = .systemGray
         timeSignButton.setTitle("4/4", for: .normal)
         timeSignButton.layer.cornerRadius = 10
-        timeSignButton.isHighlighted = true
         timeSignButton.translatesAutoresizingMaskIntoConstraints = false
         return timeSignButton
     }()
@@ -72,7 +71,6 @@ class ViewController: UIViewController, PickerDelegate {
         startButton.tintColor = .systemGray
         startButton.setTitle("START", for: .normal)
         startButton.layer.cornerRadius = 10
-        startButton.isHighlighted = true
         startButton.translatesAutoresizingMaskIntoConstraints = false
         return startButton
     }()
@@ -83,7 +81,6 @@ class ViewController: UIViewController, PickerDelegate {
         tapTempoButton.tintColor = .systemGray
         tapTempoButton.setTitle("TAP", for: .normal)
         tapTempoButton.layer.cornerRadius = 10
-        tapTempoButton.isHighlighted = true
         tapTempoButton.translatesAutoresizingMaskIntoConstraints = false
         return tapTempoButton
     }()

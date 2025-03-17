@@ -8,7 +8,6 @@
 import AVFoundation
 
 class Player {
-    
     private var audioEngine: AVAudioEngine!
     private var playerNode: AVAudioPlayerNode!
     private var bufferClickHigh: AVAudioPCMBuffer!

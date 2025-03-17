@@ -31,6 +31,7 @@ class Metronome {
             isRunning ? start() : stop()
         }
     }
+    
     var dataForAnimate: ((_ interval: DispatchTime) -> Void)?
         
     func start() {

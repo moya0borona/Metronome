@@ -65,6 +65,7 @@ class ViewController: UIViewController, PickerDelegate {
         timeSignButton.translatesAutoresizingMaskIntoConstraints = false
         return timeSignButton
     }()
+    
     var startButton: UIButton = {
         let startButton = UIButton()
         startButton.backgroundColor = .systemGreen
@@ -86,6 +87,7 @@ class ViewController: UIViewController, PickerDelegate {
         tapTempoButton.translatesAutoresizingMaskIntoConstraints = false
         return tapTempoButton
     }()
+    
     var mainImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "background")
@@ -165,6 +167,7 @@ class ViewController: UIViewController, PickerDelegate {
             startButton.setTitle("STOP", for: .normal)
         }
     }
+    
     @objc func timeSignButtonAction() {
         let pickerViewController = PickerViewController()
         pickerViewController.delegate = self
@@ -175,8 +178,6 @@ class ViewController: UIViewController, PickerDelegate {
         }
         present(pickerViewController, animated: true)
     }
-    
-    
     
     @objc func tapTempoButtonAction() {
         let currentTime = Date().timeIntervalSince1970
@@ -192,11 +193,8 @@ class ViewController: UIViewController, PickerDelegate {
         }
         lastTapTime = currentTime
         metronome.saveTapTime.append(currentTime)
-        
         guard metronome.saveTapTime.count >= 2 else { return }
-        
         metronome.calculateTap()
-        
         self.slider.value  = self.metronome.bpm
         self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  
     }
@@ -222,7 +220,7 @@ class ViewController: UIViewController, PickerDelegate {
             Metronome.totalBeat = 0
         }
     }
-    //    MARK: - Cancel animation
+   
     func cancelBeatImageAnimation() {
         for i in 0...7 {
             beatImageArray[i].image = bitImage
@@ -291,10 +289,12 @@ extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         slider.value = Float(row + 20)
         metronome.bpm = Float(row + 20)
     }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let view = view as? UILabel { label = view }

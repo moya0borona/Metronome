@@ -10,7 +10,8 @@ import UIKit
 protocol PickerDelegate: AnyObject {
     func updateImage()
 }
-class PickerViewController: UIViewController {
+
+final class PickerViewController: UIViewController {
     
     weak var delegate: PickerDelegate?
     let pickerView = UIPickerView()
@@ -25,11 +26,12 @@ class PickerViewController: UIViewController {
         
         setupPickerView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         pickerView.selectRow(Int(Metronome.topNum - 1), inComponent: 0, animated: true)
     }
     
-    func setupPickerView() {
+    private func setupPickerView() {
         view.addSubview(pickerView)
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -41,8 +43,8 @@ class PickerViewController: UIViewController {
             pickerView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
-    
 }
+
 extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerViewValue.count
@@ -51,21 +53,25 @@ extension PickerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         Metronome.topNum = row + 1
         delegate?.updateImage()
         
     }
+    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let pickerViewHeight: CGFloat = 300
         let numberOfVisibleRows: CGFloat = 3.2
         return pickerViewHeight / numberOfVisibleRows
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         print(row)
         
         return pickerViewValue[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 60, weight: .bold)

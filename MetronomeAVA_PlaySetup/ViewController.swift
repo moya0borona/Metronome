@@ -296,8 +296,7 @@ extension ViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var label = UILabel()
-        if let view = view as? UILabel { label = view }
+        let label = UILabel()
         label.font = .systemFont(ofSize: 60, weight: .bold)
         label.text =  pickerData[row]
         label.textColor = UIColor(#colorLiteral(red: 0.1340290308, green: 0.1086466387, blue: 4.684161468e-05, alpha: 1))

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  MetronomeAVA_PlaySetup
+//  Metronome
 //
 //  Created by Андрей Андриянов on 03.11.2024.
 //
@@ -189,7 +189,7 @@ class ViewController: UIViewController, PickerDelegate {
         metronome.saveTapTime.append(currentTime)
         guard metronome.saveTapTime.count >= 2 else { return }
         metronome.calculateTap()
-        self.slider.value  = self.metronome.bpm
+        self.slider.value = self.metronome.bpm
         self.pickerView.selectRow(Int(self.slider.value - 20), inComponent: 0, animated: true)  
     }
     

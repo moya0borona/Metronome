@@ -1,6 +1,6 @@
 //
 //  ElementsColor.swift
-//  MetronomeAVA_PlaySetup
+//  Metronome
 //
 //  Created by Андрей Андриянов on 17.03.2025.
 //
@@ -36,6 +36,5 @@ extension UIColor {
             blue: 4.684161468e-05,
             alpha: 1)}
     }
-    
 }
 

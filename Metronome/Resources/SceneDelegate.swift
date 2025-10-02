@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  MetronomeAVA_PlaySetup
+//  Metronome
 //
 //  Created by Андрей Андриянов on 03.11.2024.
 //

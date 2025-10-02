@@ -1,6 +1,6 @@
 //
 //  Player.swift
-//  MetronomeAVA_PlaySetup
+//  Metronome
 //
 //  Created by Андрей Андриянов on 02.12.2024.
 //
@@ -38,7 +38,7 @@ class Player {
             print("Audio files not found in bundle")
             return }
         do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             let audioFileClickHigh = try AVAudioFile(forReading: clickHighUrl)
@@ -50,6 +50,7 @@ class Player {
             print("Error: \(error)")
         }
     }
+    
     private func createPCMBuffer(from file: AVAudioFile) -> AVAudioPCMBuffer? {
         guard let format = file.processingFormat as AVAudioFormat? else { return nil }
         guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: UInt32(file.length)) else { return nil }
@@ -60,11 +61,10 @@ class Player {
             print("Error reading audio file into buffer: \(error)")
             return nil
         }
-        
         return buffer
     }
+    
     func play() {
-        
         guard let buffer = Metronome.totalBeat == 0 ? bufferClickHigh : bufferClickLow else { return }
         playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts, completionHandler: nil)
         playerNode.play()

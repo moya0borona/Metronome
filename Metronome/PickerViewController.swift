@@ -1,6 +1,6 @@
 //
 //  PickerViewController.swift
-//  MetronomeAVA_PlaySetup
+//  Metronome
 //
 //  Created by Андрей Андриянов on 22.11.2024.
 //
